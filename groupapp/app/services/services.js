@@ -5,29 +5,13 @@ app.factory('userData', function() {
         user: {
             firstName: 'Yuxiao',
             lastName: 'Wang',
-            movie: ["Successful read!!!"],
+            movie: ["Game of Throne","Arrival","Fast and Furious 10"],
             email: 'o1xhack@gmail.com',
             startDate: new Date(2017, 9, 25),
             username: 'o1xhack'
         }
     }
 
-});
-
-app.factory('gitHubUserLookup', function($http) {
-    return {
-        lookupUser: function(user) {
-            console.log('Looking up user: ' + user);
-            return $http.get("https://api.github.com/users/" + user)
-                .then(function(response) {
-                        return response;
-                    },
-                    // error handler
-                    function(response) {
-                        return response;
-                    });
-        }
-    }
 });
 
 app.factory('OMDbLookUpMovieTitle', function ($http) {

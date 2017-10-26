@@ -1,4 +1,4 @@
-var MyFirstController = function($scope, $http, userData, userGravatar, gitHubUserLookup, OMDbLookUpMovieTitle) {
+var MyFirstController = function($scope, $http, userData, userGravatar, OMDbLookUpMovieTitle) {
     $scope.ManyHellos = ['Hello', 'Hola', 'Bonjour', 'Guten Tag', 'Ciao', 'Namaste', 'Yiasou'];
 
     $scope.data = userData.user;
@@ -7,10 +7,6 @@ var MyFirstController = function($scope, $http, userData, userGravatar, gitHubUs
         return userGravatar.getGravatar(email);
     };
 
-    $scope.getGitHubUser = function(username) {
-        console.log("username: " + username);
-        gitHubUserLookup.lookupUser(username).then(onLookupComplete, onError);
-    };
 
     $scope.getOMDbData = function (moviename) {
         console.log("");

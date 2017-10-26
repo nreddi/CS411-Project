@@ -23,34 +23,41 @@
 <div class="container">
     <div ng-controller="MyFirstController">
         <p class="text-muted">
-            1. Name with Lower case filter:</p>
+            1. Name (lower case): </p>
         <p class="text-info">Name : {{data.firstName + data.lastName | lowercase}}</p>
         <hr />
         <p class="text-muted">
-            2. Email with Upper case filter</p>
-        <p class="text-info">Email : {{data.email | uppercase }}</p>
+            2. Email (lower case): </p>
+        <p class="text-info">Email : {{data.email | lowercase }}</p>
         <hr />
         <p class="text-muted">
-            3. Date filter: (mm/dd)</p>
+            3. Project start date (mm/dd): </p>
         <p class="text-info">Project database stated : {{data.startDate | date:'MM' +'/' + 'd'}}
         </p>
         <hr />
         <p class="text-muted">
-            4. Custom filter to remove all spaces:
+            4. User Movie database:</p>
         </p>
-        <p class="text-info">{{data.movie | removeAllSpaces}}</p>
+        <p class="text-info">{{"User's movies: " + data.movie }}</p>
         <p></p>
         <hr />
+        <p class="text-muted">
+            5. avatar:
+        </p>
         <div>
             <img ng-src="{{getGravatar(data.username)}}" />
         </div>
         <hr/>
+        <p class="text-muted">
+            6. Search movie with title:
+        </p>
         <div>
             <my-input/>
-            <label>Github return code:
+            <label>Return code:
                 <h4 ng-bind="status"></h4>
             </label>
         </div>
+
         <div>
             <pre>{{movie | json}}</pre>
             {{error}}
