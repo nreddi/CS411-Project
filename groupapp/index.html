@@ -58,8 +58,17 @@
             </label>
         </div>
 
+        <div ng-repeat="m in movie.results">
+             <div class="movie">
+                <h1>{{m.title}}</h1>
+                 <p>{{m.overview}}</p>
+             </div>
+        </div>
+
+
+
         <div>
-            <pre>{{movie | json}}</pre>
+            <pre>{{movie.results[0].title}}</pre>
             {{error}}
         </div>
     </div>
