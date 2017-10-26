@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="myfirstangularapp">
+
+<head>
+    <meta charset="utf-8" />
+    <title>AngularJS - Sebastian Brukalo</title>
+    <link data-require="bootstrap@*" data-semver="3.3.2" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <script data-require="bootstrap@*" data-semver="3.3.2" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script>
+        document.write('<base href="' + document.location + '" />');
+    </script>
+    <script data-require="angular.js@1.4.x" src="https://code.angularjs.org/1.4.0-rc.0/angular.js" data-semver="1.4.0-rc.0"></script>
+    <script data-require="jquery@2.1.3" data-semver="2.1.3" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers/controllers.js"></script>
+    <script src="app/filters/filters.js"></script>
+    <script src="app/services/services.js"></script>
+    <script src="app/directives/directives.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<div class="container">
+    <div ng-controller="MyFirstController">
+        <p class="text-muted">
+            1. Name with Lower case filter:</p>
+        <p class="text-info">Name : {{data.firstName + data.lastName | lowercase}}</p>
+        <hr />
+        <p class="text-muted">
+            2. Email with Upper case filter</p>
+        <p class="text-info">Email : {{data.email | uppercase }}</p>
+        <hr />
+        <p class="text-muted">
+            3. Date filter: (mm/dd)</p>
+        <p class="text-info">Project database stated : {{data.startDate | date:'MM' +'/' + 'd'}}
+        </p>
+        <hr />
+        <p class="text-muted">
+            4. Custom filter to remove all spaces:
+        </p>
+        <p class="text-info">{{data.movie | removeAllSpaces}}</p>
+        <p></p>
+        <hr />
+        <div>
+            <img ng-src="{{getGravatar(data.username)}}" />
+        </div>
+        <hr/>
+        <div>
+            <my-input/>
+            <label>Github return code:
+                <h4 ng-bind="status"></h4>
+            </label>
+        </div>
+        <div>
+            <pre>{{movie | json}}</pre>
+            {{error}}
+        </div>
+    </div>
+</div>
+</body>
+</html>
