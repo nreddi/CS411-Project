@@ -34,7 +34,7 @@ app.factory('OMDbLookUpMovieTitle', function ($http) {
 app.factory('getPosterPhoto', function() {
     return {
         getPoster: function(posterpath) {
-            return 'https://image.tmdb.org/t/p/w500' + posterpath;
+            return 'https://image.tmdb.org/t/p/w500/' + posterpath;
         }
     }
 });
