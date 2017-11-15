@@ -1,3 +1,15 @@
+
+
+const SpotifyStrategy = require('passport-spotify').Strategy
+
+
+app.get('/auth/spotify',
+    passport.authenticate('spotify', {scope: ['user-read-email', 'user-read-private'] }),
+    function(req, res){
+        // The request will be redirected to spotify for authentication, so this
+        // function will not be called.
+    });
+
 app.factory('userData', function() {
 
     return {
