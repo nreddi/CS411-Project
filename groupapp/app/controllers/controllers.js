@@ -1,11 +1,10 @@
-var MyFirstController = function($scope, $http, userData, getPosterPhoto , OMDbLookUpMovieTitle) {
+var MyFirstController = function($scope, $http, userData, userGravatar, OMDbLookUpMovieTitle) {
     $scope.ManyHellos = ['Hello', 'Hola', 'Bonjour', 'Guten Tag', 'Ciao', 'Namaste', 'Yiasou'];
 
     $scope.data = userData.user;
 
-    $scope.getGravatar = function(path) {
-        console.log("");
-        getPosterPhoto.getPoster(path).then(onLookupComplete, onError);
+    $scope.getGravatar = function(email) {
+        return userGravatar.getGravatar(email);
     };
 
 

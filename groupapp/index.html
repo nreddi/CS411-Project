@@ -38,11 +38,18 @@
         <p class="text-muted">
             4. User Movie database:</p>
         </p>
-        <p class="text-info">User's movies: {{data.movie }}</p>
+        <p class="text-info">{{"User's movies: " + data.movie }}</p>
         <p></p>
+        <hr />
+        <p class="text-muted">
+            5. avatar:
+        </p>
+        <div>
+            <img ng-src="{{getGravatar(data.username)}}" />
+        </div>
         <hr/>
         <p class="text-muted">
-            5. Search movie with title:
+            6. Search movie with title:
         </p>
         <div>
             <my-input/>
@@ -51,23 +58,8 @@
             </label>
         </div>
 
-        <div ng-repeat="m in movie.results">
-             <div class="movie">
-                <h1>{{m.title}}</h1>
-                 <h5>{{"Movie overview: "}}</h5><p>{{m.overview}}</p>
-                 <h5>{{"Average score: " + m.vote_average}}</h5>
-                 <h5>{{"Release date: " + m.release_date}}</h5>
-                 <br>
-             </div>
-        </div>
-
-
-
         <div>
-
-           <br>
             <pre>{{movie | json}}</pre>
-
             {{error}}
         </div>
     </div>
