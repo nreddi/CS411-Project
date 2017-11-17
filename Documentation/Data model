@@ -1,0 +1,7 @@
+const Schema = mongoose.Schema
+const user = new Schema({
+    username:   String,
+    music_keyword:   String,
+    movie:  Int
+})
+
